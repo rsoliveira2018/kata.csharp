@@ -17,10 +17,9 @@ namespace Kata.ConsoleApps
                 "\tRecursive Factorial of 6: \t\t" + 
                 MathUtilities.RecursiveFactorial(6));
 
-            int[] numbers = { 11, 10, 30, 40, 50 };
             Console.WriteLine(
                 "\tRecursive Array Backwards Sum: \t\t" + 
-                ArrayUtilities.SumNumbersBackwardlyRecursively(numbers));
+                ArrayUtilities.SumNumbersBackwardlyRecursively({ 11, 10, 30, 40, 50 }));
 
         }
     }
