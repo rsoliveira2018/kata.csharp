@@ -1,15 +1,19 @@
+using okta_clientflow_dotnetsix.Okta;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Added in order to catch the information from the appsettings.json file under the Okta section
+builder.Services.Configure<OktaJwtVerificationOptions>(builder.Configuration.GetSection("Okta"));
+
+// Added as normally required by the dependency injection mechanism
+builder.Services.AddTransient<IJwtValidator, OktaJwtValidation>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
