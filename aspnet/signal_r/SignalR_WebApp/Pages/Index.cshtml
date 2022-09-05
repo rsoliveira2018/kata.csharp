@@ -1,0 +1,36 @@
+﻿@page
+<div class="container">
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="txt_user" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="txt_body" /></div>
+    </div>
+    <div class="row">
+        <div class="col-3"><input type="button" id="btn_send" value="Send Message" /></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6"><ul id="ul_messages"></ul></div>
+    </div>
+</div>
+<div class="row"><div class="col-12"><hr /></div></div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">Topic:</div>
+        <div class="col-4"><input type="text" id="txt_topic" /></div>
+    </div>
+    <div class="row">
+        <div class="col-6"><input type="button" id="btn_subscribe" value="Subscribe" /></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6"><ul id="ul_pubsub"></ul></div>
+    </div>
+</div>
+<div class="row"><div class="col-12"><hr /></div></div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
